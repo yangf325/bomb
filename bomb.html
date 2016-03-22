@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bomb</title>
+	<style type="text/css">
+	*{
+		margin:0;padding:0;
+		box-sizing:border-box;
+	}
+	body{
+		background-color: #eee;
+	}
+	#bomb{
+		width:430px;
+		height:360px;
+		margin: 50px auto;
+		position: relative;
+		background-color: #fff;
+	}
+	#btitle{
+		background:linear-gradient(#8fa1ff,#3757fa);
+		width:430px;
+		height:60px;
+	}
+	#btitlep{
+		font-size: 24px;
+		color: #fff;
+		text-align: center;
+		line-height: 60px;
+		font-weight: bold;
+	}
+	#bbody{
+		background-color: #ccc;
+		width:300px;
+		height:300px;
+		display: inline-block;
+	}
+	#binfo{
+		display: inline-block;
+		width:130px;
+		height: 300px;
+		vertical-align:top;
+		background-color: #339999;
+		margin-left: -8px;
+	}
+	#reset{
+		display: block;
+		width:80px;
+		height:40px;
+		margin: 20px auto;
+	}
+	#pause{
+		display: block;
+		width:80px;
+		height:40px;
+		margin: 20px auto;
+	}
+	#timep{
+		text-align: center;
+		margin-bottom: 20px;
+		color: #fff;
+	}
+	#infotext{
+		text-align: center;
+		color: #fff;
+	}
+	.box{
+		width:30px;
+		height:30px;
+		background-color: #848430;
+		display: inline-block;
+		border:1px solid #000;
+		box-sizing:border-box;
+		text-align: center;
+		line-height:30px;
+		vertical-align:top;
+	}
+	.bombresult{
+		background-color: #ccc;
+	}
+	img{
+		width:30px;
+		height:26px;
+	}
+	</style>
+</head> 
+<body>
+	<div id="bomb">
+		<div id="btitle">
+			<p id="btitlep">扫雷</p>
+		</div>
+		<div id="bbody"></div>
+		<div id="binfo">
+			<input type="submit" id='reset'  value='开始'>
+			<input type="submit" id='pause'  value='暂停'>
+			<p id='timep'>Time:<span id ='timespan'>00:00</span></p>
+			<p id='infotext'>剩余标记<span id="remain">10</span>个</p>
+		</div>
+	</div>
+</body>
+<script src="bomb.js"></script>
+</html>
