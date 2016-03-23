@@ -11,16 +11,9 @@
 	body{
 		background-color: #eee;
 	}
-	#bomb{
-		width:430px;
-		height:360px;
-		margin: 50px auto;
-		position: relative;
-		background-color: #fff;
-	}
 	#btitle{
 		background:linear-gradient(#8fa1ff,#3757fa);
-		width:430px;
+		width:100%;
 		height:60px;
 	}
 	#btitlep{
@@ -31,30 +24,28 @@
 		font-weight: bold;
 	}
 	#bbody{
+		position: absolute;
+		top:100px;
+		left:500px;
 		background-color: #ccc;
 		width:300px;
 		height:300px;
 		display: inline-block;
 	}
 	#binfo{
+		padding-top:120px;
+		position: absolute;
 		display: inline-block;
 		width:130px;
-		height: 300px;
+		height:600px;
 		vertical-align:top;
 		background-color: #339999;
-		margin-left: -8px;
 	}
-	#reset{
+	input{
 		display: block;
 		width:80px;
-		height:40px;
-		margin: 20px auto;
-	}
-	#pause{
-		display: block;
-		width:80px;
-		height:40px;
-		margin: 20px auto;
+		height:30px;
+		margin:10px auto;
 	}
 	#timep{
 		text-align: center;
@@ -66,6 +57,7 @@
 		color: #fff;
 	}
 	.box{
+		cursor: pointer;
 		width:30px;
 		height:30px;
 		background-color: #848430;
@@ -83,6 +75,27 @@
 		width:30px;
 		height:26px;
 	}
+	body{
+		-moz-user-select: none; /*火狐*/
+		-webkit-user-select: none; /*webkit浏览器*/
+		-ms-user-select: none; /*IE10*/
+		-khtml-user-select: none; /*早期浏览器*/
+		user-select: none;
+	}
+	#drag{
+		width:20px;
+		height:20px;
+		box-sizing:border-box;
+		border-radius: 50%;
+		background-color: orange;
+		position: absolute;
+		top:100px;left:500px;
+		font-size:12px;
+		line-height: 20px;
+		text-align: center;
+		margin-top: -20px;
+		margin-left: -20px;
+	}
 	</style>
 </head> 
 <body>
@@ -90,13 +103,17 @@
 		<div id="btitle">
 			<p id="btitlep">扫雷</p>
 		</div>
-		<div id="bbody"></div>
 		<div id="binfo">
-			<input type="submit" id='reset'  value='开始'>
-			<input type="submit" id='pause'  value='暂停'>
-			<p id='timep'>Time:<span id ='timespan'>00:00</span></p>
+			<input type="submit" id='reset'  value='快速开始'>
+			<input type="submit" id='record'  value='高分榜'>
+			<p id='timep'>Time:<span id ='timespan'>0:0</span></p>
 			<p id='infotext'>剩余标记<span id="remain">10</span>个</p>
+			<input type="submit" id='primary' value='人级'>
+			<input type="submit" id='mid' value='兽级'>
 		</div>
+		<div id="bbody">
+		</div>
+		<div id="drag"></div>
 	</div>
 </body>
 <script src="bomb.js"></script>
